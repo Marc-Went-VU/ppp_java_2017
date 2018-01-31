@@ -8,14 +8,14 @@ import ida.ipl.extra.Arguments;
 import ida.ipl.extra.consts.Constants;
 
 class Ida {
-	
+
 	public final Ibis ibis;
 
 	Ida() throws IbisCreationFailedException {
 		ibis = IbisFactory.createIbis(
-				Constants.IBIS_CAPABILITIES, 
+				Constants.IBIS_CAPABILITIES,
 				null,
-				Constants.RECEIVE_PORT_TYPE, 
+				Constants.RECEIVE_PORT_TYPE,
 				Constants.SEND_PORT_TYPE
 		);
 	}
@@ -27,7 +27,7 @@ class Ida {
 
 		arg.setMasterIdentifier(master);
 		arg.setMyIdentifier(ibis.identifier());
-		
+
 		// If I am the master, run master, else run worker
 		if (master.equals(ibis.identifier())) {
 			new Master(ibis, arg);
@@ -39,7 +39,7 @@ class Ida {
 		ibis.end();
 	}
 
-	
+
 
 	public static void main(String[] args) {
 		try {
@@ -51,5 +51,5 @@ class Ida {
 		}
 	}
 
-	
+
 }
