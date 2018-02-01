@@ -17,6 +17,9 @@
     <property name="jar" location="lib/ida.jar" />
     <property name="zipPrefix" value="${vunetID}_${studentName}_${submitNumber}" />
 
+    <property name="java.target" value="1.7"/>
+    <property name="java.source" value="1.7"/>
+
 
     <path id="default.classpath">
         <fileset dir="${ipl}">
@@ -46,7 +49,7 @@
         </copy>
 
         <!-- Compile the java code from ${src} into ${tmp} -->
-        <javac srcdir="${src}" destdir="${tmp}" debug="on" classpathref="default.classpath" target="1.7" source="1.7">
+        <javac srcdir="${src}" destdir="${tmp}" debug="on" classpathref="default.classpath">
         </javac>
 
         <!-- Create jar file -->
