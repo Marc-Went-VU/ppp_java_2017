@@ -19,7 +19,6 @@
 
     <property name="java.target" value="1.7"/>
     <property name="java.source" value="1.7"/>
-    <property name="build.compiler" value="javac1.7" />
 
 
     <path id="default.classpath">
