@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ant 
+ant
 POOLSIZE=$1
 POOLNAME=pool-$(date +%Y%m%d%H%M%S)
 
