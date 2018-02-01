@@ -5,7 +5,7 @@
 
     <!-- PLEASE CHANGE THESE VALUES! -->
     <property name="studentName" value="Marc Went" />
-	<property name="vunetID" value="mwt680" />
+	  <property name="vunetID" value="mwt680" />
 
     <!-- PLEASE INCREMENT THIS VALUE IF YOU HAPPEN TO SUBMIT AGAIN! -->
     <property name="submitNumber" value="1" />
@@ -16,7 +16,7 @@
     <property name="ipl" location="ipl-2.3/lib" />
     <property name="jar" location="lib/ida.jar" />
     <property name="zipPrefix" value="${vunetID}_${studentName}_${submitNumber}" />
-    
+
 
     <path id="default.classpath">
         <fileset dir="${ipl}">
@@ -46,7 +46,7 @@
         </copy>
 
         <!-- Compile the java code from ${src} into ${tmp} -->
-        <javac srcdir="${src}" destdir="${tmp}" debug="on" classpathref="default.classpath">
+        <javac srcdir="${src}" destdir="${tmp}" debug="on" classpathref="default.classpath" target="1.7" source="1.7">
         </javac>
 
         <!-- Create jar file -->
@@ -55,7 +55,7 @@
         </jar>
 
 
-        <!-- rewrite applications using IbisC 
+        <!-- rewrite applications using IbisC
         	(optional step for ipl applications) -->
         <java classname="ibis.compile.Ibisc" taskname="Ibisc" failonerror="true" fork="true">
             <arg line="${jar}" />
